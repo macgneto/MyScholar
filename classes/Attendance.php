@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Attendance
 {
     public $attendance_id;
@@ -31,7 +33,6 @@ class Attendance
                       WHERE attendance.attendance_class_id = student_course.sc_class_id
                       AND attendance.attendance_status = 'Present'
                       AND attendance.attendance_verify = '0'
-
                       AND attendance.attendance_student_id = student.student_id
                       AND student.student_id = :student_id
                          GROUP BY course.course_id";
@@ -39,12 +40,16 @@ class Attendance
             // prepare query statement
             $stmt = $conn -> prepare($sql);
 
+            //Bind the parameters
             $stmt -> bindValue(':student_id', $student_id, PDO::PARAM_INT);
+
             // execute query
             $stmt->execute();
             return $stmt-> fetchALL(PDO::FETCH_ASSOC);
         }
 
+
+        
     public function updateAttendanceStatus($conn)
     {
         $sql = "UPDATE attendance
@@ -84,6 +89,7 @@ class Attendance
     }
 
 
+    
     public static function getAttendancesByStudentId($conn, $class_id, $student_id)
     {
         $sql = "SELECT *
