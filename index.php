@@ -29,14 +29,15 @@ require 'sidebar.php';
 ?>
 
 <div id="layoutSidenav_content">
-    <main >
+    <main>
         <div class="container-fluid">
 
             <div class="row row-breadcrumb">
                 <div class="col p-0 m-0">
                     <div class="card-breadcrumb  py-1">
 
-                        <h3 class="mx-3 mt-3 mb-2"><i class="far fa-smile-wink mr-1"></i>  Καλώς ήρθες  <b><?php echo $_SESSION['user_username'] ?></b></h3>
+                        <h3 class="mx-3 mt-3 mb-2"><i class="far fa-smile-wink mr-1"></i> Καλώς ήρθες
+                            <b><?php echo $_SESSION['user_username'] ?></b></h3>
 
                         <ol class="breadcrumb m-3 ">
                             <li class="breadcrumb-item active">Αρχική</li>
@@ -49,67 +50,64 @@ require 'sidebar.php';
 
 
 
-<?php if (Auth::isAdmin()): ?>
+            <?php if (Auth::isAdmin()): ?>
 
 
-      <div class="row">
+            <div class="row">
 
 
-          <!-- Students -->
-          <div class="col-xl-3 col-md-6">
-              <div class="card bg-primary text-white mb-4 border-button">
-                  <div class="card-body">Μαθητές</div>
-                  <div class="card-body">Σύνολο : <strong><?= $active_students+$inactive_students;?></strong></div>
-                  <div class="card-footer d-flex align-items-center justify-content-between">
-                      <a class="small text-white stretched-link " href="student.php">Λεπτομέρειες</a>
-                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                  </div>
-              </div>
-          </div>
+                <!-- Students -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white mb-4 border-button">
+                        <div class="card-body">Μαθητές</div>
+                        <div class="card-body">Σύνολο : <strong><?= $active_students+$inactive_students;?></strong>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link " href="student.php">Λεπτομέρειες</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
 
 
-        <div class="col-xl-3 col-md-6">
-          <div class="card bg-success text-white mb-4 border-button">
-            <div class="card-body">Καθηγητές</div>
-            <div class="card-body">Σύνολο : <strong><?php echo $active_students; ?></strong></div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4 border-button">
+                        <div class="card-body">Καθηγητές</div>
+                        <div class="card-body">Σύνολο : <strong><?php echo $active_students; ?></strong></div>
 
-            <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link " href="teachers.php">Λεπτομέρειες</a>
-              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link " href="teachers.php">Λεπτομέρειες</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-purple text-white mb-4 border-button">
+                        <div class="card-body">Μαθήματα</div>
+                        <div class="card-body">Σύνολο : <strong><?= $total_courses;?></strong></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="courses.php">Λεπτομέρειες</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
 
-
-
-        <div class="col-xl-3 col-md-6">
-          <div class="card bg-purple text-white mb-4 border-button">
-            <div class="card-body">Μαθήματα</div>
-             <div class="card-body">Σύνολο : <strong><?= $total_courses;?></strong></div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link" href="courses.php">Λεπτομέρειες</a>
-              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-md-6">
-          <div class="card bg-info text-white mb-4 border-button">
-            <div class="card-body ">Τμήματα</div>
-            <!-- <hr class="m-0 p-0"> -->
-             <div class="card-body">Σύνολο: <strong><?= $total_classrooms;?></strong></div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-              <a class="small text-white stretched-link" href="classrooms.php">Λεπτομέρειεςhaha</a>
-              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-          </div>
-        </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-info text-white mb-4 border-button">
+                        <div class="card-body ">Τμήματα</div>
+                        <!-- <hr class="m-0 p-0"> -->
+                        <div class="card-body">Σύνολο: <strong><?= $total_classrooms;?></strong></div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" href="classrooms.php">Λεπτομέρειεςhaha</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
 
 
-<!-- 222222 -->
-        <!-- <div class="col-xl-6 col-md-6">
+                <!-- 222222 -->
+                <!-- <div class="col-xl-6 col-md-6">
 
                 <div class="card h-100 ">
                     <div class="card-body">
@@ -166,7 +164,7 @@ require 'sidebar.php';
 
 
 
-<?php
+                <?php
 
 // total_incomes calculates the total money from all hours tha we calculate as income
 $total_incomes = Charts::getInfoAboutMoney($conn);
@@ -203,8 +201,8 @@ foreach ($total_incomes as $total_income) {
     // money we expect
     $money_unpaid = $total_money - $money_paid ;
 ?>
-<!-- 111111 -->
-        <!-- <div class="col-xl-3 col-md-3">
+                <!-- 111111 -->
+                <!-- <div class="col-xl-3 col-md-3">
 
                 <div class="card  ">
                     <div class="card-body">
@@ -265,43 +263,45 @@ foreach ($total_incomes as $total_income) {
 
 
 
-      </div>
+            </div>
 
-<?php endif; ?>
+            <?php endif; ?>
 
 
-        <?php
+            <?php
 
-            if(Auth::isStudent()):
+            if (Auth::isStudent()):
                 $notification = new Attendance();
                 $nots = $notification->notificationAttendance($conn, $_SESSION['user_id']);
                 ?>
-                <?php if (empty($nots)): ?>
-                    <div class="alert alert-success" role="alert">
-                        <p>Δεν έχετε ανεπιβεβαίωτες παρουσίες στην καρτέλα σας.</p>
-                    </div>
-                <?php else: ?>
+            <?php if (empty($nots)): ?>
+            <div class="alert alert-success" role="alert">
+                <p>Δεν έχετε ανεπιβεβαίωτες παρουσίες στην καρτέλα σας.</p>
+            </div>
+            <?php else: ?>
 
-                    <?php foreach ($nots as $not) : ?>
-                        <div class="alert alert-warning" role="alert">
-                            <p>'Εχετε μη-επιβεβαιωμένες παρουσίες στο μάθημα : <a href="http://myscholar.ddns.net/main/student/student-course-view.php?id=<?= $not['sc_id']; ?>"><?= $not['course_title'] ?></a></p>
+            <?php foreach ($nots as $not) : ?>
+            <div class="alert alert-warning" role="alert">
+                <p>'Εχετε μη-επιβεβαιωμένες παρουσίες στο μάθημα : <a
+                        href="http://myscholar.ddns.net/main/student/student-course-view.php?id=<?= $not['sc_id']; ?>"><?= $not['course_title'] ?></a>
+                </p>
 
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+            <?php endif; ?>
             <?php endif; ?>
 
 
 
 
 
-<?php if (Auth::isAdmin()) {
-    // echo "Admin";
-} elseif (Auth::isTeacher()) {
-    // echo "Teacher";
-} elseif (Auth::isSecretary()) {
-    // echo "Gramateas";
-} elseif (Auth::isStudent()) {
+            <?php if (Auth::isAdmin()) {
+                    // echo "Admin";
+                } elseif (Auth::isTeacher()) {
+                    // echo "Teacher";
+                } elseif (Auth::isSecretary()) {
+                    // echo "Gramateas";
+                } elseif (Auth::isStudent()) {
 
 
 
@@ -313,21 +313,21 @@ foreach ($total_incomes as $total_income) {
     // echo "Student";
     // echo "</br>";
     // echo $_SESSION['user_id'];
-}
+                }
 ?>
 
 
 
 
-    </div>
+        </div>
 
 
 
-  </main>
+    </main>
 
 
 
-<?php
+    <?php
 
 require 'footer.php';
 ?>
